@@ -2,7 +2,7 @@
 
 This repo offers a collection of routines that can be incorporated into other python functions and scripts or used individually. I regularly find myself recreating this functionality, so I've decided to create a common reference here. 
 
-These routines include functionality for file manipulations, parsing, and search. I've spent a fair amount of time trying to get working functionality for common types of file manipulations and parsing and these are some of what I've come up with. I've already been through the StackOverflow rabbitholes, and these are the most optimal solutions to each of the issues presented. 
+These routines include functionality for file manipulations, parsing, and search. I've already been through the StackOverflow rabbitholes, and these are what I've found to be the most optimal solutions to each of the issues presented. 
 
 I'm releasing under an MIT license, so feel free to clone / modify as necessary. You might find these helpful if you're trying to do file parsing with excel. 
 
