@@ -22,21 +22,27 @@ with open(searchFile, 'r') as csvInMem:
 
 with open(searchFile, 'r') as csvInMem:
     readingCSV = csv.reader(csvInMem, delimiter=',')
+    matchList = []
 
     for row in readingCSV:
-        lookForValue = row[2] # Should you need to return more than one matching columns in a search, comment out the following line
+        lookForValue = row[2]   # Ensure this is set to the column you want
+                                # Should you need to return more than one matching columns in a search, comment out the following line
         #lookForValue2 = row[]
 
         with open(matchFile, 'r') as matchFileInMem:
             readingMatch = csv.reader(matchFileInMem, delimiter=',')
             for row in readingMatch:
-                if lookForValue == row[1]:
-                    with open(processDirectory + 'search_results.txt', 'a+') as resultsFile:
-                        resultsFile.write(lookForValue + '\n')  # Should you need to return more matching columns in a search (see comment in Line 27)
-                                                                # Add the variable with a delimiter before the new-line character here
+                if lookForValue == row[1]:  # Ensure this is set to the column you want
+                    if not lookForValue in matchList:
+                            matchList.append(lookForValue)
 
         searchCounter += 1
 
         if searchCounter % 5 == 0:  # Set the denominator in the modulo to a realistic value for your data
                                     # e.g. if your record set is 100,000 rows, set to '10000' to get an update every 10,000 iterations
-            print('The search is presently at record: %s\n' % searchCounter)
+            print('The search is presently at record %s out of %s records' % (searchCounter, rowCount))
+    
+    with open(processDirectory + 'search_results.txt', 'a+') as resultsFile:
+        for result in matchList:
+            resultsFile.write(result + '\n')    # Should you need to return more matching columns in a search (see comment in Line 28)
+                                                # add the variable with a delimiter before the new-line character here
