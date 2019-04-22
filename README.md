@@ -4,14 +4,13 @@ This repo offers a collection of routines that can be incorporated into other py
 
 These routines include functionality for file manipulations, parsing, and search. I've already been through the StackOverflow rabbitholes, and these are what I've found to be the most optimal solutions to each of the issues presented. 
 
-I'm releasing under an MIT license, so feel free to clone / modify as necessary. You might find these helpful if you're trying to do file parsing with excel. 
+I'm releasing under an MIT license, so feel free to clone / modify as necessary. 
 
 ___
 
 This repo contains scripts for the following: 
 
-* **New for April:** `search_within.py` loops through the rows of one csv file for strings and searches within a second csv file for matches
-
+* `search_within.py` loops through the rows of one csv file for strings and searches within a second csv file for matches
 * `convert_csv_xlsx.py` converts csv files to xlsx files for a specified directory
 * `convert_txt_xlsx.py` converts txt files to xlsx files for a specified directory
 * `convert_xls_xlsx.py` converts xls files to xlsx files for a specified directory
